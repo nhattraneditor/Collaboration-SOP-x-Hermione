@@ -17,7 +17,7 @@
             --lark-color: #3370ff;
             --radius: 12px;
             --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-            --vip-color: #f59e0b; /* Màu vàng cam cho dịch vụ VIP */
+            --vip-color: #f59e0b;
         }
 
         * {
@@ -93,8 +93,10 @@
 
         h3 {
             font-size: 1.1rem;
-            margin: 20px 0 10px;
+            margin: 25px 0 10px;
             color: var(--primary);
+            display: flex;
+            align-items: center;
         }
 
         /* Folder Tree Visualization */
@@ -149,15 +151,6 @@
             background-color: var(--lark-color);
         }
 
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid #e2e8f0;
-            color: var(--text-main);
-        }
-        .btn-outline:hover {
-            background-color: #f8fafc;
-        }
-
         /* Status Badges */
         .status-grid {
             display: grid;
@@ -189,6 +182,25 @@
         .badge-revise { background: #dbeafe; color: #2563eb; }
         .badge-ready { background: #dcfce7; color: #16a34a; }
         .badge-uploaded { background: #f3e8ff; color: #9333ea; }
+
+        /* Detail Box for New Features */
+        .detail-box {
+            background-color: #f0f9ff;
+            border: 1px solid #bae6fd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+        .detail-box strong {
+            color: #0369a1;
+        }
+        .detail-list {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        .detail-list li {
+            margin-bottom: 8px;
+        }
 
         .frame-io-box {
             background: #111;
@@ -234,7 +246,6 @@
 
     <div class="container">
 
-        <!-- PHASE 1: GOOGLE DRIVE -->
         <div class="card">
             <div class="section-header">
                 <span class="section-icon">📂</span>
@@ -263,20 +274,39 @@
             </div>
         </div>
 
-        <!-- PHASE 2: LARK BASE -->
         <div class="card">
             <div class="section-header">
                 <span class="section-icon">🚀</span>
                 <div class="section-title" style="color: var(--lark-color);">Phase 2: Project Tracker</div>
             </div>
-            <p>Once assets are uploaded, we use <strong>Lark Base</strong> to track every single deadline. Here is how to read the columns:</p>
+            <p>Once assets are uploaded, we use <strong>Lark Base</strong> to track every single deadline.</p>
 
             <h3>Key Columns Explanation</h3>
             <ul style="list-style: none; padding-left: 0;">
-                <li style="margin-bottom: 10px;">🔹 <strong>Source:</strong> Paste your Google Drive folder link here.</li>
-                <li style="margin-bottom: 10px;">🔹 <strong>Script:</strong> Paste your Google Docs link here.</li>
+                <li style="margin-bottom: 10px;">🔹 <strong>Source / Script:</strong> Paste your links here.</li>
                 <li style="margin-bottom: 10px;">🔹 <strong>Format:</strong> Choose <i>Short</i> (Vertical) or <i>Long</i> (Horizontal).</li>
             </ul>
+
+            <h3>📝 Adding Details & Comments</h3>
+            <p>To provide specific assets or chat about a video, you must <strong>Open the Record</strong> (Click the Expand button ⤢ next to the video title).</p>
+            
+            <div class="detail-box">
+                <p>Inside the expanded view, you will find these new important fields:</p>
+                <ul class="detail-list">
+                    <li>
+                        <strong>Resource usage suggestions:</strong><br>
+                        <span style="font-size: 0.9em; color: #555;">Paste links to specific B-roll, images, or branding guides you want me to use for this specific video.</span>
+                    </li>
+                    <li>
+                        <strong>Note:</strong><br>
+                        <span style="font-size: 0.9em; color: #555;">Add any special instructions or reminders here.</span>
+                    </li>
+                    <li>
+                        <strong>Comments (💬):</strong><br>
+                        <span style="font-size: 0.9em; color: #555;">Chat directly on the card! (Remember: You must <u>Open</u> the card to see and reply to comments).</span>
+                    </li>
+                </ul>
+            </div>
 
             <h3>Status Tags Meaning</h3>
             <div class="status-grid">
@@ -308,7 +338,6 @@
             </div>
         </div>
         
-        <!-- OPTIONAL: CONCIERGE SERVICE -->
         <div class="card" style="border-left: 4px solid var(--vip-color);">
             <div class="section-header">
                 <span class="section-icon">☕</span>
